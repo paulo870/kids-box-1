@@ -153,7 +153,7 @@ function loadActivityUnit(unitNumber) {
     }
 
     pageNumbers.forEach(num => {
-        currentImages.push(basePath + "Page" + num + ".jpg");
+        currentImages.push(basePath + "page" + num + ".jpg");
     });
 
     if (currentImages.length > 1) {

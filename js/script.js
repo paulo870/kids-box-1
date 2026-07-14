@@ -117,7 +117,7 @@ function loadStudentUnit(unitNumber) {
     }
 
     pageNumbers.forEach(num => {
-        currentImages.push(basePath + "page" + num + ".jpg");
+        currentImages.push(basePath + "Page" + num + ".jpg");
     });
 
     loadImage(currentImages[currentIndex]);
@@ -153,7 +153,7 @@ function loadActivityUnit(unitNumber) {
     }
 
     pageNumbers.forEach(num => {
-        currentImages.push(basePath + "page" + num + ".jpg");
+        currentImages.push(basePath + "Page" + num + ".jpg");
     });
 
     if (currentImages.length > 1) {

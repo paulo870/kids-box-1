@@ -519,9 +519,8 @@ body {
     align-items: center;
     padding-top: 15px;
     z-index: 1000;
-
-    /* IMPORTANT ADD THIS */
     justify-content: flex-start;
+    touch-action: auto;
 }
 
 /* pushes logo to the bottom */

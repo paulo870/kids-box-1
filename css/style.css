@@ -79,11 +79,8 @@ body {
     width: calc(100% - 90px);
     height: 100vh;
     overflow: auto;
-
-    /* Allow our JavaScript pinch zoom */
-    touch-action: pan-x pan-y;
     
-    background-image: url('../images/background.jpg');
+    background-image: url('../images/background.jpg'); /* use correct path */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

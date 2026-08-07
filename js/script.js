@@ -234,37 +234,22 @@ nextBtn.addEventListener("click", () => {
 });
 
 // ==========================
-// ZOOM - COMPUTER + TOUCH
+// CTRL + WHEEL ZOOM
 // ==========================
+slideContainer.addEventListener("wheel", function(e) {
+    if (!e.ctrlKey) return;
+    e.preventDefault();
 
-let currentScale = 1;
-let initialPinchDistance = null;
-let initialPinchScale = 1;
-
-
-// ==========================
-// APPLY ZOOM
-// ==========================
-function applyZoom() {
-
-    // Keep zoom within reasonable limits
+    if (e.deltaY < 0) currentScale += 0.1;
+    else currentScale -= 0.1;
     if (currentScale < 0.1) currentScale = 0.1;
-    if (currentScale > 5) currentScale = 5;
 
-    slideImage.style.width =
-        slideImage.naturalWidth * currentScale + "px";
-
-    slideImage.style.height =
-        slideImage.naturalHeight * currentScale + "px";
+    slideImage.style.width = slideImage.naturalWidth * currentScale + "px";
+    slideImage.style.height = slideImage.naturalHeight * currentScale + "px";
 
     resizeEditCanvas();
-}
-
-
-// ==========================
-// RESIZE EDIT CANVAS
-// ==========================
-function resizeEditCanvas() {
+    
+    function resizeEditCanvas(){
 
     const rect = slideImage.getBoundingClientRect();
 
@@ -273,141 +258,10 @@ function resizeEditCanvas() {
 
     editCanvas.style.left = slideImage.offsetLeft + "px";
     editCanvas.style.top = slideImage.offsetTop + "px";
+
 }
-
-
-// ==========================
-// COMPUTER - CTRL + WHEEL
-// ==========================
-slideContainer.addEventListener("wheel", function(e) {
-
-    // Only zoom when CTRL is being held
-    if (!e.ctrlKey) return;
-
-    // Do not zoom if the control bar was used
-    if (
-        e.target.closest &&
-        e.target.closest(".control-bar")
-    ) {
-        return;
-    }
-
-    e.preventDefault();
-
-    if (e.deltaY < 0) {
-        currentScale += 0.1;
-    } else {
-        currentScale -= 0.1;
-    }
-
-    applyZoom();
-
 }, { passive: false });
 
-
-// ==========================
-// ANDROID / TOUCHSCREEN
-// TWO-FINGER PINCH ZOOM
-// ==========================
-
-// Get distance between two fingers
-function getPinchDistance(touch1, touch2) {
-
-    const dx = touch2.clientX - touch1.clientX;
-    const dy = touch2.clientY - touch1.clientY;
-
-    return Math.sqrt(
-        dx * dx + dy * dy
-    );
-}
-
-
-// TOUCH START
-slideContainer.addEventListener("touchstart", function(e) {
-
-    // Ignore touches on the control bar
-    if (
-        e.target.closest &&
-        e.target.closest(".control-bar")
-    ) {
-        return;
-    }
-
-    // Only start pinch zoom with two fingers
-    if (e.touches.length === 2) {
-
-        e.preventDefault();
-
-        initialPinchDistance = getPinchDistance(
-            e.touches[0],
-            e.touches[1]
-        );
-
-        initialPinchScale = currentScale;
-    }
-
-}, { passive: false });
-
-
-// TOUCH MOVE
-slideContainer.addEventListener("touchmove", function(e) {
-
-    // Ignore touches on the control bar
-    if (
-        e.target.closest &&
-        e.target.closest(".control-bar")
-    ) {
-        return;
-    }
-
-    // Only zoom with exactly two fingers
-    if (
-        e.touches.length === 2 &&
-        initialPinchDistance !== null
-    ) {
-
-        e.preventDefault();
-
-        const currentPinchDistance = getPinchDistance(
-            e.touches[0],
-            e.touches[1]
-        );
-
-        // Calculate how much the fingers moved
-        const scaleChange =
-            currentPinchDistance / initialPinchDistance;
-
-        // Apply that change to the original scale
-        currentScale =
-            initialPinchScale * scaleChange;
-
-        applyZoom();
-    }
-
-}, { passive: false });
-
-
-// TOUCH END
-slideContainer.addEventListener("touchend", function(e) {
-
-    // When the user releases the fingers,
-    // reset the pinch calculation
-    if (e.touches.length < 2) {
-
-        initialPinchDistance = null;
-        initialPinchScale = currentScale;
-    }
-
-}, { passive: false });
-
-
-// TOUCH CANCEL
-slideContainer.addEventListener("touchcancel", function() {
-
-    initialPinchDistance = null;
-    initialPinchScale = currentScale;
-
-});
 
 // ==========================
 // HOME BUTTON

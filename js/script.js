@@ -444,8 +444,11 @@ const unitVideos = {
     },
 
     6: {
-        44: ["br2_004_v2_1"],
-        45: ["br2_004_v2_2","br2_004_v2_3"]
+        42: ["KidsBox_Level1_Unit6_Language_video"],
+        43: ["KidsBox_Level1_Unit6_Song_video","KidsBox_Level1_Unit6_Karaoke_video"],
+        44: ["KidsBox_Level1_Unit6_Montys_sounds_and_spelling_video"],
+        45: ["KidsBox_Level1_Unit6_Story_video"],
+        46: ["KidsBox_Level1_Unit6_CLIL_video"]
     },
 
     9: {

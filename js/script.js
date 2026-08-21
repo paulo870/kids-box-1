@@ -352,7 +352,7 @@ audioBtn.addEventListener("click", function(e) {
 
     // Define audio tracks for all units (Activity Book)
     const activityBookAudioTracks = {
-        1: {4:["page4_Track_02"],6:["page6_Track_03"],7:["page7_Track_04"]},
+        1: {4:["KidsBox_Level1_Test_Units_1-4_Listening_1_Audio_Track_26","KidsBox_Level1_Test_Units_1-4_Listening_2_Audio_Track_27","KidsBox_Level1_Test_Units_1-4_Listening_3_Audio_Track_28"],6:["page6_Track_03"],7:["page7_Track_04"]},
         2: {10:["page10_Track_05"],12:["page12_Track_06"],16:["page16_Track_07"]},
         3: {18:["page18_Track_08"],19:["page19_Track_09"],20:["page20_Track_10"],21:["page21_Track_11"],22:["page22_Track_12"]},
         4: {24:["page24_Track_13"],25:["page25_Track_14"],26:["page26_Track_15"],28:["page28_Track_16"]},

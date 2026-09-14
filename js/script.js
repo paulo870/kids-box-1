@@ -169,10 +169,6 @@ function loadActivityUnit(unitNumber) {
 }
 
 
-
-
-
-
 // ==========================
 // DROPDOWN EVENTS
 // ==========================
@@ -336,9 +332,9 @@ audioBtn.addEventListener("click", function(e) {
 
     // Define audio tracks for all units (Student Book)
     const studentBookAudioTracks = {
-        1: {7:["page7_Track_1.1"],8:["page8_Track_1.2"],9:["page9_Track_1.3","page9_Track_1.4"]},
-        2: {13:["page13_Track_2.1"],14:["page14_Track_2.2"],15:["page15_Track_2.3","page15_Track_2.4"]},
-        3: {20:["page20_Track_3.1","page20_Track_3.2"],21:["page21_Track_3.3"]},
+        1: {4:["page4_Track_2","page4_Track_3"],5:["page5_Track_4","page5_Track_5"],6:["page6_Track_6","page6_Track_7"],7:["page7_Track_8","page7_Track_9","page7_Track_10"],8:["page8_Track_11"],9:["page9_Track_12"]},
+        2: {10:["page10_Track_13","page10_Track_14"],11:["page11_Track_15","page11_Track_16"],12:["page12_Track_17","page12_Track_18"],13:["page13_Track_19","page13_Track_20"],14:["page14_Track_21"],15:["page15_Track_22"],16:["page16_Track_23"],17:["page17_Track_24","page17_Track_25"]},
+        3: {18:["page18_Track_26","page18_Track_27"],19:["page19_Track_28","page19_Track_29"],20:["page20_Track_30","page20_Track_31"],21:["page21_Track_32","page21_Track_33"],22:["page22_Track_34"],23:["page23_Track_35","page23_Track_36"]},
         4: {26:["page26_Track_4.1"],28:["page28_Track_4.2"],29:["page29_Track_4.3","page29_Track_4.4"],30:["page30_Track_4.5"]},
         5: {33:["page33_Track_5.1"],34:["page34_Track_5.2","page34_Track_5.3"],35:["page35_Track_5.4"]},
         6: {40:["page40_Track_65","page40_Track_66"],41:["page41_Track_67","page41_Track_68"],42:["page42_Track_69","page42_Track_70"],43:["page43_Track_71","page43_Track_72"],44:["page44_Track_73"],45:["page45_Track_74","page45_Track_75"],46:["page46_Track_76"],47:["page47_Track_77"] },
